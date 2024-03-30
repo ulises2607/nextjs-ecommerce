@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react'
 import Slider from "react-slick";
+import Slide from "@/components/Slide"
 
 const Hero = () => {
 
@@ -36,7 +39,21 @@ const Hero = () => {
   ]
 
   return (
-    <div>Hero</div>
+    <div>
+      <div>
+        <Slider {...settings} >
+          {slideData.map((item) => {
+            return <Slide 
+            key={item.id}
+            img={item.img}
+            title={item.title}
+            mainTitle={item.mainTitle}
+            price={item.price}
+              />
+          })}
+        </Slider>
+      </div>
+    </div>
   )
 }
 
